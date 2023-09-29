@@ -9,3 +9,11 @@
 .normal-link {
   @apply w-full md:w-fit border-t md:border-none border-slate-500 text-center py-4;
 }
+
+.features-type p {
+  @apply w-[80%] text-center;
+}
+
+.features-type p a {
+  @apply text-grayishBlue cursor-pointer hover:text-softRed transition-colors duration-200 tracking-tight text-base;
+}
