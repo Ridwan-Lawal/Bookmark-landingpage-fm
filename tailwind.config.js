@@ -12,6 +12,9 @@ module.exports = {
         grayishBlue: "hsl(229, 8%, 60%)",
         veryDarkBlue: "hsl(229, 31%, 21%)",
       },
+      backgroundImage: {
+        blueBg: "url('/images/.svg')",
+      },
     },
   },
   plugins: [],
