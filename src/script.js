@@ -39,3 +39,19 @@ const featuresType = document.querySelector(".features-type");
 //     eachTab.classList.remove("hidden");
 //   }
 // });
+
+// =============== FAQ SECTION ============
+
+const faqSection = document.querySelector(".faq-section");
+
+const toggleAnswers = function (e, className) {
+  e.target.closest(".questions").nextElementSibling.classList.toggle(className);
+};
+faqSection.addEventListener("click", (e) => {
+  if (e.target.classList.contains("arrow")) {
+    e.target.classList.toggle("rotate-180");
+    toggleAnswers(e, "h-0");
+    toggleAnswers(e, "mt-7");
+    toggleAnswers(e, "h-full");
+  }
+});
