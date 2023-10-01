@@ -1,0 +1,47 @@
+<section class="bg-softBlue pt-20 pb-12 md:pb-20">
+  <!-- form heading -->
+  <div class="text-white text-center max-w-lg mx-auto">
+    <p class="uppercase text-sm tracking-[5px] md:text-base">
+      35,000+ already joined
+    </p>
+    <h2 class="text-2xl font-medium mt-3 md:mt-7 md:leading-snug md:text-4xl">
+      Stay up-to-date with what we’re doing
+    </h2>
+  </div>
+
+  <!-- =============== form section======= -->
+  <form action="" class="mt-10 max-w-md md:max-w-xl mx-auto">
+    <section class="px-4 flex flex-col md:flex-row md:items-center md:gap-5">
+      <div class="md:w-[70%]">
+        <!-- form -->
+        <div
+          class="flex flex-row px-5 items-center justify-between bg-white rounded-md"
+        >
+          <input
+            type="text"
+            placeholder="Enter your email address"
+            class="email__input placeholder:text-gray-300 w-[80%] text-sm py-3.5 text-veryDarkBlue focus:outline-0"
+          />
+          <div class="error-img hidden">
+            <img src="./images/icon-error.svg" alt="" />
+          </div>
+        </div>
+        <!-- error -->
+        <p
+          class="error italic hidden text-xs rounded-b-md text-white bg-softRed px-3 py-1"
+        >
+          Whoops, make sure it's an email!
+        </p>
+      </div>
+
+      <!-- submit button -->
+      <div class="mt-6 md:mt-0">
+        <button
+          class="submit-btn bg-softRed w-full shadow-xl px-5 hover:bg-white hover:border-2 hover:border-softBlue transition-colors cursor-pointer hover:text-softBlue py-3 text-white font-medium rounded-md tracking-wide"
+        >
+          Contact Us
+        </button>
+      </div>
+    </section>
+  </form>
+</section>

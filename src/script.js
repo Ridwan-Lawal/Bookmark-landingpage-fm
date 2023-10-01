@@ -42,16 +42,67 @@ const featuresType = document.querySelector(".features-type");
 
 // =============== FAQ SECTION ============
 
-const faqSection = document.querySelector(".faq-section");
+// const faqSection = document.querySelector(".faq-section");
 
-const toggleAnswers = function (e, className) {
-  e.target.closest(".questions").nextElementSibling.classList.toggle(className);
-};
-faqSection.addEventListener("click", (e) => {
-  if (e.target.classList.contains("arrow")) {
-    e.target.classList.toggle("rotate-180");
-    toggleAnswers(e, "h-0");
-    toggleAnswers(e, "mt-7");
-    toggleAnswers(e, "h-full");
+// const toggleAnswers = function (e, className) {
+//   e.target.closest(".questions").nextElementSibling.classList.toggle(className);
+// };
+// faqSection.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("arrow")) {
+//     e.target.classList.toggle("rotate-180");
+//     toggleAnswers(e, "h-0");
+//     toggleAnswers(e, "mt-7");
+//     toggleAnswers(e, "h-full");
+//   }
+// });
+
+////////////////// form validation   /////////////
+
+const form = document.querySelector("form");
+const inputEmail = document.querySelector(".email__input");
+const error = document.querySelector(".error");
+
+// regular expression for email validation
+const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+form.addEventListener("click", (e) => {
+  if (e.target.classList.contains("submit-btn")) {
+    e.preventDefault();
+    if (re.test(inputEmail.value)) {
+      // //// EMAIL SUBMITTED NOTIFICATION
+      inputEmail.nextElementSibling.classList.add("hidden");
+      inputEmail.parentElement.classList.add(
+        "border-2",
+        "border-green-500",
+        "rounded-t-md"
+      );
+      inputEmail.parentElement.classList.remove("rounded-md");
+      error.classList.remove("hidden", "bg-softRed");
+      error.classList.add("bg-green-500");
+      error.textContent = "Email submitted successfully :)";
+
+      // EMAIL SUCESSFUL NOTIFCATION REMOVED AFTER 4S
+      setTimeout(function () {
+        inputEmail.nextElementSibling.classList.add("hidden");
+        inputEmail.parentElement.classList.remove(
+          "border-2",
+          "border-softRed",
+          "rounded-t-md",
+          "border-green-500"
+        );
+        inputEmail.parentElement.classList.add("rounded-md");
+        error.classList.add("hidden");
+      }, 4000);
+    } else {
+      // DISPLAY IF EMAIL NOT VALID
+      inputEmail.nextElementSibling.classList.remove("hidden");
+      inputEmail.parentElement.classList.add(
+        "border-2",
+        "border-softRed",
+        "rounded-t-md"
+      );
+      inputEmail.parentElement.classList.remove("rounded-md");
+      error.classList.remove("hidden");
+    }
   }
 });
